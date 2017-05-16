@@ -16,7 +16,7 @@ t.start()
 ...
 
 t.terminate()
-# You can even exit Python here through t.setDaemon(True) was not called.
+# You can even exit here through t.setDaemon(True) was not called.
 ```
 
 ## How to suppress annoying warning messages
