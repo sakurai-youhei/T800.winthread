@@ -5,6 +5,9 @@ Extension of threading.Thread adding terminate method using Win32 API on Python
 
 [![Build status](https://img.shields.io/appveyor/ci/sakurai_youhei/t800-winthread/master.svg?label=Python%202.7%2C%203.3%20to%203.6%20%2F%20win32%20%26%20win_amd64)](https://ci.appveyor.com/project/sakurai_youhei/t800-winthread/branch/master)
 
+- [T800.winthread on PyPI](https://pypi.python.org/pypi/T800.winthread)
+- [T800.winthread on PyPI Test](https://testpypi.python.org/pypi/T800.winthread)
+
 ## How to use added terminate method
 
 Just replace your use of `threading.Thread` with `T800.winthread.TerminatableThread`.
