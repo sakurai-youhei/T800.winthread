@@ -79,7 +79,7 @@ before_test:
 
 test_script:
 
-  - "python setup.py test"
+  - "python test.py"
   - "python -m flake8 setup.py test.py T800"
 
 after_test:

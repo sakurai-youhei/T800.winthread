@@ -140,4 +140,4 @@ def suite():
 
 
 if __name__ == "__main__":
-    main()
+    main(verbosity=2)
