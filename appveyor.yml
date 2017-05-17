@@ -75,12 +75,11 @@ build_script:
 
 before_test:
 
-  - "pip install hacking docutils"
+  - "pip install hacking"
 
 test_script:
 
   - "python setup.py test"
-  - "python setup.py check -m -r -s"
   - "python -m flake8 setup.py test.py T800"
 
 after_test:
