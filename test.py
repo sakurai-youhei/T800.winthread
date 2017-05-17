@@ -85,8 +85,9 @@ class T800WinThreadTest(TestCase):
             0, threads, "Some threads are still alive, %r" % threads)
 
         for i in range(num_threads):
-            writable.send_bytes(b"%d" % i)
-            self.assertEqual(b"%d" % i, readable.recv_bytes(),
+            data = ("%d" % i).encode("ascii")
+            writable.send_bytes(data)
+            self.assertEqual(data, readable.recv_bytes(),
                              "Someone seems to intercept pipe, %r" % threads)
 
     def test_terminate_method_with_Queue(self, num_threads=50):
