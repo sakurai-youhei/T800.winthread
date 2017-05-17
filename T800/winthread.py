@@ -87,7 +87,7 @@ class TerminatableThread(Thread):
     __termination_lock = Lock()
 
     def terminate(self, exit_code=1):
-        """Terminate thread using Win32 API with freeing less resources"""
+        """Terminate thread using Win32 API with freeing *less* resources"""
         with self.__termination_lock:
             warnings.warn(
                 "Be aware that thread (ident=%s, name=%s) is being terminated "
