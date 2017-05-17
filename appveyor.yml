@@ -75,7 +75,7 @@ build_script:
 
 before_test:
 
-  - "pip install hacking"
+  - "pip install hacking docutils"
 
 test_script:
 
