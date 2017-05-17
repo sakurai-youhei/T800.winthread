@@ -106,7 +106,7 @@ class T800WinThreadTest(TestCase):
 
         for i in range(num_threads):
             q.put(i)
-            self.assertEqual(i, q.get(timeout=0.5),
+            self.assertEqual(i, q.get(timeout=self.WAITSEC),
                              "Someone seems to intercept queue, %r" % threads)
 
     def test_terminate_method_with_join_method(self):
