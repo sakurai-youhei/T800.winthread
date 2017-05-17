@@ -105,7 +105,9 @@ class TerminatableThread(Thread):
                 del _active[self.ident]
 
                 # Masquerading as stopped
-                if hasattr(self, "_is_stopped"):  # Py3.6
+                if hasattr(self, "_stop"):  # Py3.3
+                    self._stop()
+                elif hasattr(self, "_is_stopped"):  # Py3.6
                     self._is_stopped = True
                     self._tstate_lock.release()
                 elif hasattr(self, "_Thread__stop"):  # Py2.7
