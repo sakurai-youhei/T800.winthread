@@ -60,6 +60,8 @@ environment:
 
   PYPI: pypitest
 
+  SKIP_IF_PY33: "findstr /B 3.3 && echo Skipping because of Python 3.3 || "
+
 install:
 
   - ps: "ls \"C:/Python*\""
@@ -75,12 +77,13 @@ build_script:
 
 before_test:
 
-  - "pip install hacking"
+  - "pip install hacking docutils"
 
 test_script:
 
   - "python test.py"
-  - "python -m flake8 setup.py test.py T800"
+  - "echo %PYTHON_VERSION% | %SKIP_IF_PY33% python setup.py check -m -r -s"
+  - "echo %PYTHON_VERSION% | %SKIP_IF_PY33% python -m flake8 setup.py test.py T800"
 
 after_test:
 
