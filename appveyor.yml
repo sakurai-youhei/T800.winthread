@@ -81,7 +81,7 @@ test_script:
 
   - "python setup.py test"
   - "python setup.py check -m -r -s"
-  - "python -m flake8"
+  - "python -m flake8 setup.py test.py T800"
 
 after_test:
 
